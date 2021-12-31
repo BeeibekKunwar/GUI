@@ -1,0 +1,56 @@
+// Create a frame containing Subject as Label,Java and SEF as Checknox.
+   Show when one checkbox is selected,the selected checkbox output shows up in textfield
+
+  import javax.swing.*;
+  import java.awt.event.*;
+
+class Checksubject extends JFrame implements ItemListener{
+    JLabel l;
+    JCheckBox java,sef;
+    JTextField t;
+    
+     public Checksubject(){
+      setSize(400,500);
+      l=new JLabel("Subject");
+      java=new JCheckBox("Java");
+      java.setBounds(20,40,100,10);
+      sef=new JCheckBox("SEF");
+      sef.setBounds(20,60,100,10);
+      t=new JTextField();
+      t.setBounds(40,100,150,100);
+      add(l);
+      add(java);
+      add(sef);
+      add(t);
+      java.addItemListener(this);
+      sef.addItemListener(this);
+      setLayout(null);
+      setVisible(true);
+        }
+
+    public void itemStateChanged(ItemEvent e){
+      if(e.getSource()==java){
+          if(e.getStateChange()==1){
+            t.setText("Java is Selected");
+              }
+          else{
+            t.setText("Java is Unselected");
+             }
+              }
+        else if(e.getSource()==sef){
+          if(e.getStateChange()==1){
+             t.setText("SEF is Selected");
+               }
+            else{
+                t.setText("SEF is Unselected");          
+                  }
+                   }
+                    }   
+    
+    public static void main(String []args){
+      new Checksubject();
+       }
+        }
+
+
+
