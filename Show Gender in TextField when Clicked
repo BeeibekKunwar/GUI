@@ -1,0 +1,50 @@
+//Create a Frame with  having male and female as radiobutton.
+   Show when one is selected,it appears on TextField.
+
+  
+  import javax.swing.*;
+  import java.awt.event.*;
+
+class Textgender extends JFrame implements ItemListener{
+    JLabel l;
+    JRadioButton male,female;
+    JTextField t;
+   
+   public Textgender(){
+      setSize(400,500);
+      l=new JLabel("Gender");
+      l.setBounds(20,20,50,10);
+      male=new JRadioButton("Male");
+      male.setBounds(20,40,100,10);
+      female=new JRadioButton("Female");
+      female.setBounds(20,60,10,10);
+      t=new JTextField();
+      t.setBounds(40,10,150,100);
+      add(l);
+      add(male);
+      add(female);
+      male.setSelected(true);
+      ButtonGroup grp=new ButtonGroup();
+      grp.add(male);
+      grp.add(female);
+      male.addItemListener(this);
+      female.addItemListener(this);
+      setLayout(null);
+      setVisible(true);
+        }
+ 
+    public void itemStateChanged(ItemEvent e){
+      if(e.getSource()==male){
+        t.setText("Male");
+         }
+      else{
+          t.setText("Female");
+            }
+             }
+      
+    public static void main(String []args){
+      new Textgender();
+        }
+         }
+
+     
