@@ -1,0 +1,47 @@
+  // Create a  Frame containing label Gender,radiobutton Male ,Female and Submit button.
+ The male radiobutton is autoselectd.
+ 
+ import javax.swing.*;
+import java.awt.event.*;
+
+class Submitgender extends JFrame implements ActionListener{
+    JLabel l;
+    JRadioButton male,female;
+    JButton Submit;
+    
+    public Submitgender(){
+      setSize(400,500);
+      l=new JLabel("Gender");
+      l.setBounds(20,20,50,10);
+      male=new JRadioButton("Male");
+      male.setBounds(20,40,100,10);
+      female=new JRadioButton("Female");
+      female.setBounds(20,60,100,10);
+      add(l);
+      add(male);
+      add(female);
+      male.setSelected(true);
+      ButtonGroup grp=new ButtonGroup();
+      grp.add(male);
+      grp.add(female);
+      Submit=new JButton();
+      Submit.setBounds(60,80,50,10);
+      setLayout(null);
+      setVisible(true);
+        }
+
+    public void actionPerformed(ActionEvent e){
+      if(male.isSelected()){
+        System.out.println("Male");
+           }
+      else if(female.isSelected()){
+        System.out.println("Female");
+         }
+          }
+       
+    public static void main(String []args){
+      new Submitgender();
+       }
+         }
+
+     
