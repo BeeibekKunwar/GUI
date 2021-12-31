@@ -1,0 +1,46 @@
+//Create a Frame with 2 textfield,one of which should show whether mouse is inside or outside the frame and 
+other textfield should didplay x and y componenet of pointer when user moves pointer inside frame.
+
+import java.awt.*;
+import java.awt.event.*;
+class Show implements MouseListener,MouseMotionListener{
+    Frame f;
+    TextField t1,t2;
+  public Show(){
+        f=new Frame("ShowClick");
+        f.setSize(400,500);
+        t1=new TextField();
+        t1.setBounds(200,50,100,30);
+        t2=new TextField();
+        t2.setBounds(200,100,100,30);
+        f.add(t1);
+        f.add(t2);
+        f.setLayout(null);
+        f.setVisible(true);
+        f.addMouseListener(this);
+        f.addMouseMotionListener(this);
+           }
+    public void mouseEntered(MouseEvent e){
+        t1.setText("In!");
+           }
+    public void mouseExited(MouseEvent e){
+        t1.setText("Out!");
+          }
+    public void mouseMoved(MouseEvent e){
+        String s="X:"+e.getX()+"Y:"+e.getY();
+        t2.setText(s);
+            }
+     public void mousePressed(MouseEvent e)
+     {}
+    public void mouseClicked(MouseEvent e)
+    {}
+    public void mouseDragged(MouseEvent e)
+    {}
+    public void mouseReleased(MouseEvent e)
+    {}
+
+public static void main(String []args){
+   new Show();
+     }
+       }
+
