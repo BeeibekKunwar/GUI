@@ -1,0 +1,28 @@
+//Program to show output when button is clicked
+import java.awt.*;
+import java.awt.event.*;
+class Buttonclick extends Frame implements ActionListener{
+    TextField t;
+    public Buttonclick(){
+        setSize(400,500);
+        setTitle("ButtonClick");
+        t=new TextField();
+        t.setBounds(250,30,30,15);
+        Button b=new Button("Submit");
+        b.setBounds(200,300,200,15);
+        add(b);
+        add(t);
+        setVisible(true);
+        setLayout(null);
+b.addActionListener(this);
+
+    }
+public void actionPerformed(ActionEvent e){
+    t.setText("Hello");
+}
+public static void main(String []args){
+    new Buttonclick();
+
+}
+
+}
