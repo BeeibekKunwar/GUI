@@ -1,0 +1,32 @@
+// Create a Frame containing File and Edit as Menu in MenuBar. Menu File have One Menu named as New and Close as MenuItem inside of it.
+  Menu New have MenuItem Blank inside of it.
+  
+import java.awt.*;
+class Showmenu{
+    Frame f;
+    MenuBar bar;
+    MenuItem close,blank;
+    Menu file,edit,n;
+    public Showmenu(){
+        f=new Frame("Software");
+        f.setSize(400,500);
+        bar=new MenuBar();
+        f.setMenuBar(bar);
+        file=new Menu("File");
+        edit=new Menu("Edit");
+        n=new Menu("New");
+        bar.add(file);
+        bar.add(edit);
+        file.add(n);
+        blank=new MenuItem("Blank");
+        close=new MenuItem("Close");
+        n.add(blank);
+        file.add(close);
+        f.setLayout(null);
+        f.setVisible(true);
+       }
+       
+    public static void main(String []args){
+        new Showmenu();
+         }
+          }
