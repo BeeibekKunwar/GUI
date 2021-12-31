@@ -1,0 +1,53 @@
+// Create a swing GUI that contains two buttons (Add & Subtract) & 3 textfield.
+   When 2 buttons are clicked,add or subtract of first two textfield should be
+     displayed in 3rd textfield.
+     
+     
+import javax.swing.*;
+import java.awt.event.*;
+
+class Showresult extends JFrame implements ActionListener{
+    JButton plus,minus;
+    JTextField first,second,result;
+    
+       public Showresult(){
+        setSize(400,500);
+        first=new JTextField();
+        first.setBounds(200,50,100,30);
+        second=new JTextField();
+        second.setBounds(200,100,100,30);
+        result=new JTextField();
+        result.setBounds(200,100,30,10);
+        plus=new JButton("Add");
+        plus.setBounds(50,400,20,10);
+        minus=new JButton("Subtract");
+        minus.setBounds(50,400,50,10);
+        add(first);
+        add(second);
+        add(result);
+        add(plus);
+        add(minus);
+        setLayout(null);
+        setVisible(true);
+        plus.addActionListener(this);
+        minus.addActionListener(this);
+         }
+         
+   public void actionPerformed(ActionEvent e){
+       int n1=Integer.parseInt(first.getText());
+       int n2=Integer.parseInt(second.getText());
+       
+       if(e.getSource()==plus){
+           int n=n1+n2;
+            result.setText(n);
+              }
+        else{
+           int n=n1-n2;
+           result.setText(n);
+                }
+                 }
+
+public static void main(String []args){
+    new Showresult();
+      }
+       }
