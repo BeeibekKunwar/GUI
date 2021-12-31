@@ -19,10 +19,11 @@ class Textgender extends JFrame implements ItemListener{
       female=new JRadioButton("Female");
       female.setBounds(20,60,10,10);
       t=new JTextField();
-      t.setBounds(40,10,150,100);
+      t.setBounds(40,100,150,100);
       add(l);
       add(male);
       add(female);
+      add(t);
       male.setSelected(true);
       ButtonGroup grp=new ButtonGroup();
       grp.add(male);
