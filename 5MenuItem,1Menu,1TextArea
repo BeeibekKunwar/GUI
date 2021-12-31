@@ -1,0 +1,63 @@
+// Create a Frame having one Menu in MenuBar named Edit. Menu Edit consists of 5 MenuItem 
+   named Cut,Copy,Paste,SelectAll,Close.Frame consists of one 1 TextArea.  
+   Close MenuItem is separated from other 4 MenuItem by Separator.
+
+
+   import javax.swing.*;
+import java.awt.event.*;
+
+  class Optionmenu extends JFrame implements ActionListener{
+   JMenuBar bar;
+    JMenuItem cut,copy,paste,selectAll,close;
+    JMenu edit;
+    JTextArea t;
+ public Optionmenu(){
+        setSize(400,500);
+        bar=new JMenuBar();
+        setJMenuBar(bar);
+        edit=new JMenu("Edit");
+        cut=new JMenuItem("Cut");
+        copy=new JMenuItem("Copy");
+        paste=new JMenuItem("Paste");
+        selectAll=new JMenuItem("SelectAll");
+        close=new JMenuItem("Close");
+        bar.add(edit);
+        edit.add(cut);
+        edit.add(copy);
+        edit.add(paste);
+        edit.add(selectAll);
+        edit.add(new JSeparator());
+        edit.add(close); 
+        t=new JTextArea();
+        setBounds(200,100,200,150);
+        cut.addActionListener(this);
+       copy.addActionListener(this);
+       paste.addActionListener(this);
+       selectAll.addActionListener(this);
+       close.addActionListener(this);
+       setLayout(null);
+       setVisible(true);
+           }
+    
+     public void actionPerformed(ActionEvent e){
+         if(e.getSource()==cut){
+             t.cut();
+               }
+         if(e.getSource()==copy){
+            t.copy();
+             }
+        if(e.getSource()==paste){
+          t.paste();
+            }
+        if(e.getSource()==selectAll){
+            t.selectAll();
+              }
+        if(e.getSource()==close){
+          System.exit(0);
+            }
+             }
+         
+    public static void main(String []args)throws ClassNotFoundException{
+        new Optionmenu();
+         }
+          }
