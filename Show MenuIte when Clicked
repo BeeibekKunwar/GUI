@@ -1,0 +1,43 @@
+/// Create a Frame containing 2 MenuItem cut and copy. These MenuItem should pop out inside the 
+    frame whenever mouse is clicked.
+
+
+
+import javax.swing.*;
+import java.awt.event.*;
+
+class Popmenu implements MouseListener{
+    JFrame f;
+    JMenuItem cut,copy;
+    JPopupMenu pop;
+    
+       public Popmenu(){
+        f=new JFrame();
+        f.setSize(400,500);
+        pop=new JPopupMenu();
+        cut=new JMenuItem("Cut");
+        copy=new JMenuItem("Copy");
+        pop.add(cut);
+        pop.add(copy);
+        f.addMouseListener(this);
+        f.setLayout(null);
+        f.setVisible(true);
+           }
+           
+     public void mouseClicked(MouseEvent e){
+         pop.show(f,e.getX(),e.getY());
+             }
+     
+     public void mouseReleased(MouseEvent e)
+       {}
+     public void mousePressed(MouseEvent e)
+       {}
+     public void mouseEntered(MouseEvent e)
+       {}
+     public void mouseExited(MouseEvent e)
+       {}
+     
+    public static void main(String []args){
+        new Popmenu();
+         }
+           }
